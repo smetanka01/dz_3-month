@@ -1,0 +1,40 @@
+body{
+    background: antiquewhite;
+}
+
+.table{
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid black;
+    font-family: sans-serif;
+    border-collapse: collapse;
+}
+
+th{
+    text-align: left;
+}
+
+td, th{
+    padding: 7px 11px;
+    border: 1px solid black;
+    text-transform: capitalize;
+}
+
+.code, .flag{
+    width: 15%;
+}
+
+.flag img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.name, .population{
+    width: 24%;
+}
+
+.capital{
+    width: 22%;
+}
+
