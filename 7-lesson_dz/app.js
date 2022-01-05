@@ -16,12 +16,16 @@ btn.onclick = async () => {
         country = country[0]
 
         countryName.innerText = country.name.common
-        console.log(country.borders)
+        const promises = country.borders.map(code => {
+            return fetch(('https://restcountries.com/v3.1/alpha/') + code)
+        });
 
-        for (key in country.borders) {
+        const countries = await Promise.all(promises);
+        for await (let country of countries) {
+            const [data] = await country.json()
             neighbors.innerHTML += `
-                <li>${country.borders[key]}</li>
-            `
+                 <li>${data.name.common}</li>
+             `
         }
     }
     catch (e) {
